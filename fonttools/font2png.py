@@ -42,16 +42,17 @@
 # canvas of the correct size.
 #
 
-import ImageFont, ImageDraw, Image
+from PIL import ImageFont, ImageDraw, Image
 
-FONT_SIZE = 100
-FONT_FILE_PATH = "resources/src/fonts/nevis.ttf"
+FONT_SIZE = 40
+# FONT_FILE_PATH = "resources/fonts/nevis.ttf"
+FONT_FILE_PATH = "/Library/Fonts/Tahoma.ttf"
 
-OUTPUT_IMAGE_FILEPATH_TEMPLATE = "resources/src/images/num_%d.png"
+OUTPUT_IMAGE_FILEPATH_TEMPLATE = "resources/images/num_%d.png"
 
 
-TILE_WIDTH_PIXELS = 144/2
-TILE_HEIGHT_PIXELS = 168/2
+TILE_WIDTH_PIXELS = 144/4
+TILE_HEIGHT_PIXELS = 168/4
 
 LARGE_SCRATCH_CANVAS_DIMENSIONS = (100, 100)
 FINAL_TILE_CANVAS_DIMENSIONS = (TILE_WIDTH_PIXELS, TILE_HEIGHT_PIXELS)
@@ -77,7 +78,7 @@ if __name__ == "__main__":
         scratch_canvas_image = Image.new("RGB", LARGE_SCRATCH_CANVAS_DIMENSIONS)
         draw = ImageDraw.Draw(scratch_canvas_image)
 
-        draw.text((0,0), str(digit), font=font)
+        draw.text((0,0),unichr(digit + 1632), font=font)
 
         # Discard all the padding
         cropped_digit_image = scratch_canvas_image.crop(scratch_canvas_image.getbbox())
