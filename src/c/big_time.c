@@ -21,7 +21,7 @@ const int IMAGE_RESOURCE_IDS[NUMBER_OF_IMAGES] = {
 static GBitmap *s_images[TOTAL_IMAGE_SLOTS];
 static BitmapLayer *s_image_layers[TOTAL_IMAGE_SLOTS];
 
-#define EMPTY_SLOT -1
+# define EMPTY_SLOT -1
 
 // The state is either "empty" or the digit of the image currently in the slot.
 static int s_image_slot_state[TOTAL_IMAGE_SLOTS] = {
