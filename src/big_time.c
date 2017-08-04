@@ -38,11 +38,11 @@ static void load_digit_image_into_slot(int slot_number, int digit_value) {
   s_image_slot_state[slot_number] = digit_value;
   s_images[slot_number] = gbitmap_create_with_resource(IMAGE_RESOURCE_IDS[digit_value]);
 
-  const int x_offset = (bounds.size.w - (2 * tile_bounds.size.w)) / 2;
-  const int y_offset = (bounds.size.h - (2 * tile_bounds.size.h)) / 2;
+  const int x_offset = (bounds.size.w - (2 * tile_bounds.size.w)) / 4;
+  const int y_offset = (bounds.size.h - (2 * tile_bounds.size.h)) ;
   BitmapLayer *bitmap_layer = bitmap_layer_create(
-    GRect(x_offset + ((slot_number % 2) * tile_bounds.size.w),
-      y_offset + ((slot_number / 2) * tile_bounds.size.h),
+    GRect(x_offset + ((slot_number % 4) * tile_bounds.size.w),
+      y_offset + ((slot_number / 4) * tile_bounds.size.h),
       tile_bounds.size.w, tile_bounds.size.h));
   s_image_layers[slot_number] = bitmap_layer;
   bitmap_layer_set_bitmap(bitmap_layer, s_images[slot_number]);

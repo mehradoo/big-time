@@ -78,7 +78,7 @@ if __name__ == "__main__":
         scratch_canvas_image = Image.new("RGB", LARGE_SCRATCH_CANVAS_DIMENSIONS)
         draw = ImageDraw.Draw(scratch_canvas_image)
 
-        draw.text((0,0),unichr(digit + 1632), font=font)
+        draw.text((0,0),unichr(digit + 1776), font=font)
 
         # Discard all the padding
         cropped_digit_image = scratch_canvas_image.crop(scratch_canvas_image.getbbox())

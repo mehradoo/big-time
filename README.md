@@ -1,5 +1,3 @@
-# big-time
+# farsi-time
 
-![screenshot](big-time-screenshot.png)
-
-Example watchface showing large digits generated from a font.
+Example watchface with farsi digits based on pebble-examples/big-time.
