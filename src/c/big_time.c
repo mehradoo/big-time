@@ -21,7 +21,7 @@ const int IMAGE_RESOURCE_IDS[NUMBER_OF_IMAGES] = {
 static GBitmap *s_images[TOTAL_IMAGE_SLOTS];
 static BitmapLayer *s_image_layers[TOTAL_IMAGE_SLOTS];
 
-#define EMPTY_SLOT -1
+# define EMPTY_SLOT -1
 
 // The state is either "empty" or the digit of the image currently in the slot.
 static int s_image_slot_state[TOTAL_IMAGE_SLOTS] = {
@@ -38,8 +38,8 @@ static void load_digit_image_into_slot(int slot_number, int digit_value) {
   s_image_slot_state[slot_number] = digit_value;
   s_images[slot_number] = gbitmap_create_with_resource(IMAGE_RESOURCE_IDS[digit_value]);
 
-  const int x_offset = (bounds.size.w - (2 * tile_bounds.size.w)) / 4;
-  const int y_offset = (bounds.size.h - (2 * tile_bounds.size.h)) ;
+  const int x_offset = (bounds.size.w - (4 * tile_bounds.size.w)) / 4;
+  const int y_offset = (bounds.size.h - (4 * tile_bounds.size.h)) / 4;
   BitmapLayer *bitmap_layer = bitmap_layer_create(
     GRect(x_offset + ((slot_number % 4) * tile_bounds.size.w),
       y_offset + ((slot_number / 4) * tile_bounds.size.h),
