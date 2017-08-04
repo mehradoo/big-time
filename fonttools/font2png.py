@@ -44,9 +44,9 @@
 
 from PIL import ImageFont, ImageDraw, Image
 
-FONT_SIZE = 30
-# FONT_FILE_PATH = "resources/fonts/nevis.ttf"
-FONT_FILE_PATH = "/Library/Fonts/Tahoma.ttf"
+FONT_SIZE = 40
+FONT_FILE_PATH = "resources/fonts/Vazir-Bold.ttf"
+# FONT_FILE_PATH = "/Library/Fonts/Tahoma.ttf"
 
 OUTPUT_IMAGE_FILEPATH_TEMPLATE = "resources/images/num_%d.png"
 
